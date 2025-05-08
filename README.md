@@ -1,4 +1,4 @@
-# 🚀 Hello, I'm Mustakim  
+# Mustakim  
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/[USER-ID]?s=200" width="150" style="border-radius:50%">  
@@ -12,7 +12,8 @@
 |-------------------|-------------------|--------------------|
 | Python            | HTML/CSS          | Git                |
 | Flask             | Bootstrap         | VS Code            |
-| MySQL             | JavaScript        | Docker             |
+| MySQL 
+| JavaScript        | Docker             |
 
 ---
 
@@ -28,4 +29,4 @@
 
 ## 📫 Let's Connect  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/yourname)  
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail)](mailto:youremail@example.com)  
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail)](mustakim44777@gmail.com)  
