@@ -56,21 +56,38 @@ const initProjectModals = () => {
     const projectModal = document.getElementById('projectModal');
     if (!projectModal) return;
 
+    const basePath = 'images/';
+    const imgElement = document.querySelector('.modal-project-image');
+    const techContainer = document.querySelector('.modal-project-tech');
+    const linksContainer = document.querySelector('.modal-project-links');
+
+    const getImageWithCacheBust = (filename) => {
+        return `${basePath}${filename}?v=${Date.now()}`;
+    };
+
     const updateModalContent = (data) => {
-        const basePath = 'images/';
+        // Update konten utama
         document.getElementById('projectModalLabel').textContent = data.title;
-        document.querySelector('.modal-project-image').src = basePath + data.image;
         document.querySelector('.modal-project-description').textContent = data.description;
         document.querySelector('.modal-project-date').textContent = data.date;
 
-        // Update technologies
-        const techContainer = document.querySelector('.modal-project-tech');
+        // Handle gambar
+        imgElement.src = getImageWithCacheBust(data.image);
+        imgElement.alt = data.title;
+        
+        // Error handling
+        imgElement.onerror = () => {
+            console.error('Gagal memuat gambar:', imgElement.src);
+            imgElement.src = `${basePath}image-error.jpg`;
+            imgElement.alt = 'Gambar tidak tersedia';
+        };
+
+        // Update teknologi
         techContainer.innerHTML = data.tech.map(t => 
             `<span class="badge bg-dark me-1 mb-1">${t}</span>`
         ).join('');
 
         // Update links
-        const linksContainer = document.querySelector('.modal-project-links');
         linksContainer.innerHTML = '';
         
         if(data.demo && data.demo !== '#') {
